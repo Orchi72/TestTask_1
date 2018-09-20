@@ -19,6 +19,9 @@ namespace TestTask_1
         Translator tr;
         public LangPair lp;
 
+
+
+
         public string GetTransliteText(string text)
         {
             try

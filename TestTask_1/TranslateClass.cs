@@ -1,26 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using YandexLinguistics.NET;
 
 namespace TestTask_1
 {
     class TranslateClass
     {
-        public TranslateClass()
+        public TranslateClass(Lang inLang, Lang outLang, string key)
         {
-            tr = new Translator(apiStringKey);
-            lp = new LangPair();
+            tr = new Translator(key);
+
+            lp = new LangPair
+            {
+                InputLang = inLang,
+                OutputLang = outLang
+            };
         }
 
-        const string apiStringKey = "trnsl.1.1.20180911T170920Z.bbbe32530f1728ff.7fdb51f1907a42adf4eae4888d4d4081db90352e";
         Translator tr;
         public LangPair lp;
-
-
-
 
         public string GetTransliteText(string text)
         {
